@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+        <head th:replace="fragments :: head"/>
+
+        <body th:style="'background:url(' + @{/images/cfeurope.png} + '); background-size: cover;'">
+                <div th:include="fragments :: header">?</div>
+ 
+                <div class="cfeurope">
+
+ 					<h1>Main Menu</h1>
+ 				
+                    <table style="border-style:ridge;">
+                         <tr>
+                         	<td>
+                                 <form name="select" th:action="@{/users}">
+                                 	<input class="submit" type="submit" value="Users"/>
+                             	</form>
+                             </td>
+                    		</tr>
+                    </table>
+
+                </div>
+
+                <div th:include="fragments :: footer">?</div>
+        </body>
+        
+</html>

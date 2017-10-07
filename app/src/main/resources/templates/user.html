@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+        <head th:replace="fragments :: head"/>
+
+        <body th:style="'background:url(' + @{/images/cfeurope.png} + '); background-size: cover;'">
+                <div th:include="fragments :: header">?</div>
+ 
+                <div class="cfeurope">
+
+ 					<h1>User</h1>
+ 				
+                    <table style="border-style:ridge;">
+                         <tr>
+                         	<td>User Id</td>
+                         	<td>:</td>
+                         	<td th:text="${ccUser.userId}"/>
+                    		</tr>
+                         <tr>
+                         	<td>First Name</td>
+                         	<td>:</td>
+                         	<td th:text="${ccUser.firstName}"/>
+                    		</tr>
+                         <tr>
+                         	<td>Last Name</td>
+                         	<td>:</td>
+                         	<td th:text="${ccUser.lastName}"/>
+                    		</tr>
+                         <tr>
+                         	<td>Credit Limit</td>
+                         	<td>:</td>
+                         	<td th:text="${ccUser.creditLimit}"/>
+                    		</tr>
+                         <tr>
+                         	<td>Available Credit</td>
+                         	<td>:</td>
+                         	<td th:text="${balance}"/>
+                    		</tr>
+						<tr>
+							<td>
+                                 <form method="GET" th:action="@{/detail}">
+                                 	<input type="hidden" name="userId" th:value="${ccUser.userId}" />
+                                     <button class="submit" type="submit">Detail</button>
+                             	</form>
+                         	</td>
+						</tr>
+                    </table>
+
+                </div>
+
+                <div th:include="fragments :: footer">?</div>
+        </body>
+        
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+        <head th:replace="fragments :: head"/>
+
+        <body th:style="'background:url(' + @{/images/cfeurope.png} + '); background-size: cover;'">
+                <div th:include="fragments :: header">?</div>
+ 
+                <div class="cfeurope">
+
+ 					<h1 th:text="${'Detail for user ' + userId}"/>
+
+ 					<h2>Transactions</h2>
+
+                    <table style="border-style:ridge;">
+                    		<tr style="color: silver;">
+                    			<th>Txn Id</th>
+                    			<th>Amount</th>
+                    			<th>Where</th>
+                    			<th>When (Long)</th>
+                    			<th>When (Date)</th>
+                    		</tr>
+                         <tr th:each="ccTransaction : ${ccTransactions}">
+                    			<td th:text="${ccTransaction.txnId}"/>
+                    			<td th:text="${ccTransaction.amount}"/>
+                    			<td th:text="${ccTransaction.where}"/>
+                    			<td th:text="${ccTransaction.when}"/>
+                    			<td th:text="${#dates.formatISO(new java.util.Date(ccTransaction.when))}"/>
+                    		</tr>
+                    </table>
+
+ 					<h2>Authorisations</h2>
+
+                    <table style="border-style:ridge;">
+                    		<tr style="color: silver;">
+                    			<th>Auth Id</th>
+                    			<th>Amount</th>
+                    			<th>Where</th>
+                    		</tr>
+                         <tr th:each="ccAuthorisation : ${ccAuthorisations}">
+                    			<td th:text="${ccAuthorisation.authId}"/>
+                    			<td th:text="${ccAuthorisation.amount}"/>
+                    			<td th:text="${ccAuthorisation.where}"/>
+                    		</tr>
+                    </table>
+ 				
+                </div>
+
+                <div th:include="fragments :: footer">?</div>
+        </body>
+        
+</html>

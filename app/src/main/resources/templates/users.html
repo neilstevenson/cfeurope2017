@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+        <head th:replace="fragments :: head"/>
+
+        <body th:style="'background:url(' + @{/images/cfeurope.png} + '); background-size: cover;'">
+                <div th:include="fragments :: header">?</div>
+ 
+                <div class="cfeurope">
+
+ 					<h1>Users</h1>
+ 				
+                    <table style="border-style:ridge;">
+                         <tr th:each="datum : ${data}">
+							<td th:each="field : ${datum}" th:text="${field}"/>
+							<td>
+                                 <form method="GET" th:action="@{/user}">
+                                 	<input type="hidden" name="userId" th:value="${datum[0]}" />
+                                     <button class="submit" type="submit">View</button>
+                             	</form>
+                             </td>
+                    		</tr>
+                    </table>
+
+                </div>
+
+                <div th:include="fragments :: footer">?</div>
+        </body>
+        
+</html>

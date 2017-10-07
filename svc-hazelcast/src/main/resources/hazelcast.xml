@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.8.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <network>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <member-list>
+                    <member>127.0.0.1</member>
+                </member-list>
+            </tcp-ip>
+        </join>
+	</network>
+	
+	<!-- Authorisations are transient, they are discarded -->
+	<!-- after time has elapsed from their creation.      -->
+	<map name="cc-authorisations">
+		<time-to-live-seconds>3600</time-to-live-seconds>
+	</map>
+
+	<!-- Transactions are recorded in a (simulated) RDBMS -->
+	<!-- and loaded into Hazelcast on demand              -->
+	<map name="cc-transactions">
+        <map-store enabled="true" initial-mode="EAGER">
+            <class-name>neil.demo.cfeurope2017.CCTransactionMapStore</class-name>
+        </map-store>
+    </map>
+
+</hazelcast>

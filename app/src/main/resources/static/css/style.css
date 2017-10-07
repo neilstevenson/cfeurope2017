@@ -1,0 +1,14 @@
+.cfeurope {
+	color: gold;
+}
+
+.submit {
+	background: white;
+	color: blue;
+	height: 25px;
+	opacity: 1.0;
+}
+.submit:hover {
+	background: red;
+	opacity: 0.75;
+}
