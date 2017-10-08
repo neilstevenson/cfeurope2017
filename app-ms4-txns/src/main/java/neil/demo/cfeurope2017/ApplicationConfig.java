@@ -2,6 +2,7 @@ package neil.demo.cfeurope2017;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 import com.hazelcast.client.HazelcastClient;
 import com.hazelcast.client.config.ClientConfig;
@@ -41,5 +42,16 @@ public class ApplicationConfig {
     public HazelcastInstance hazelcastInstance(ClientConfig clientConfig) {
             return HazelcastClient.newHazelcastClient(clientConfig);
     }
+
+    /**
+     * <P>For REST, process to process calls.
+     * </P>
+     * 
+     * @return
+     */
+    @Bean
+    public RestTemplate restTemplate() {
+            return new RestTemplate();
+    }    
     
 }

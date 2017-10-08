@@ -24,11 +24,13 @@ public class TestData {
 	 * <P>All users and some of their activities</P>
 	 */
 	public static final Object[][] USERS = new Object[][] {
-		{ 1, "Neil", 	"Stevenson", 	"-1", 	"2,3", 		100 },
-		{ 2, "Curly", 	"Howard", 		"", 		"4", 		100 },
-		{ 3, "Larry", 	"Fine", 			"", 		"5", 		100 },
-		{ 4, "Moe", 		"Howard", 		"-2", 	"6", 		500 },
-		{ 5, "Shemp", 	"Howard", 		"", 		"7,8,9", 	100 },
+		{ 1, "Neil", 	"Stevenson", 	"-1", 	"2,3", 				100 },
+		{ 2, "Curly", 	"Howard", 		"", 		"4", 				100 },
+		{ 3, "Larry", 	"Fine", 			"", 		"5", 				100 },
+		{ 4, "Moe", 		"Howard", 		"-2", 	"6", 				500 },
+		{ 5, "Shemp", 	"Howard", 		"", 		"7,8,9", 			100 },
+		{ 6, "Joe", 		"Besser", 		"", 		"10,11,12,13", 		100 },
+		{ 7, "Joe", 		"DeRita", 		"", 		"14,15,16,17,18", 	100 },
 	};
 	public static final Object[][] AUTHS = new Object[][] {
 		{ -1, 50d, "Swisshotel Le Plaza" },

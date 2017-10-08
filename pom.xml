@@ -52,12 +52,11 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		
-		<!-- Spring Cloud
+		<!-- Spring Cloud, add (or remove) this as one way to activate tracing -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zipkin</artifactId>
 		</dependency>
-		-->
 	</dependencies>
 
 	<dependencyManagement>

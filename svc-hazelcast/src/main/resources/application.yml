@@ -1,3 +1,7 @@
-# Indicates to pick a random unallocated port
+# Indicates to pick a random unallocated port, as this isn't actually a web app
 server:
   port: 0
+
+spring:
+  application:
+    name: hazelcast

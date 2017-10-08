@@ -11,8 +11,15 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class ApplicationConfig {
 
+    /**
+     * <P>For REST, process to process calls.
+     * </P>
+     * 
+     * @return
+     */
     @Bean
     public RestTemplate restTemplate() {
             return new RestTemplate();
-    }    
+    }
+    
 }
